@@ -1,0 +1,77 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Demo</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">		
+	</head>	
+	<body>
+		<div class="botton">
+			<button id="btnSlide" style="width: 3em; height: 2em; position: absolute; right: 0; z-index: 3;"></button>
+		</div>
+		<div class="contenedor">
+			<div id="box-red"></div>
+			<div id="box-blue"></div>			
+		</div>	
+		<div id="box-orange"></div>	
+	</body>
+	<style type="text/css">
+		html, body {
+			width: 100%;
+			height: 100%;
+		}
+		body {
+			margin: 0;
+		}
+		.contenedor {
+			position: relative;
+	    height: 100%;
+	    background: #000033;
+	    width: 100%;
+	    overflow: hidden;
+		}
+		#box-red {
+			display: none;
+			width:100%; 
+			left: 0; 
+			position: absolute; 
+			height: 100%; 
+			background: red;
+			z-index: 2;
+		}
+		#box-blue {
+			display: block; 
+			width:100%; 
+			position: relative; 
+			height: 100%; 
+			background: blue;
+		}
+		#box-orange { 
+			width: 100%; 
+			position: absolute; 
+			top: 0;
+			height: 100%; 
+			background: orange;
+			z-index: 3;
+		}
+	</style>	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+	<script>		
+			$(document).ready(function(){
+			  $("#btnSlide").click(function(){
+			    $("#box-red").animate({
+			        width: 'toggle',
+			        transition: '1s',
+			        display: 'block'
+			    });
+ 				}); 
+
+			  $("#box-orange").hide();
+ 				$(".contenedor").click(function(){
+			    $("#box-orange").show();
+			  }); 
+			});
+
+			
+	</script>
+</html>
